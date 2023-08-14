@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Search\Listing;
+use App\Http\Controllers\Product\Show;
+use App\Http\Controllers\Product\Listing as ProductListing;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +21,5 @@ Route::get('/', function () {
 });
 
 Route::get('/search/listing', [Listing::class, '__invoke']);
+Route::get('/product/show/{id}', [Show::class, '__invoke']);
+Route::get('/product/listing', [ProductListing::class, '__invoke']);

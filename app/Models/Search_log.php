@@ -4,17 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Result;
 
-
-class Product extends Model
+class Search_log extends Model
 {
     use HasFactory;
-    protected $table = 'products';
+    protected $table = 'search_log';
     protected $guarded = [];
-
-    public function search()
-    {
-        return $this->hasMany(Result::class);
-    }
 }
