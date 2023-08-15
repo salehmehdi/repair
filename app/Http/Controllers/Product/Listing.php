@@ -17,46 +17,19 @@ class Listing extends Controller
     public function __invoke(Request $request)
     {
 
-      
-        
-        $minPrice = $request->input('minPrice'); 
-        $maxPrice = $request->input('maxPrice'); 
+        $minPrice = $request->input('minPrice', 0); 
+        $maxPrice = $request->input('maxPrice', 999999999999999999); 
         $orderBy = $request->input('orderBy', 'title'); 
+
+        
+        $order = $request->get('order', 'title');
+        $sort = $request->get('sort', 'ASC');
 
         $products = Product::query();
 
-        if (!empty($minPrice)) 
-        {
-          $products->where('price', '>=', $minPrice);
-        }
+        $products->where('price', '>=', $minPrice)->where('price', '<=', $maxPrice);
 
-        if (!empty($maxPrice)) 
-        {
-          $products->where('price', '<=', $maxPrice);
-        }
-
-        if ($orderBy === 'price_asc') 
-        {
-          $products->orderBy('price', 'asc');
-        } 
-        elseif ($orderBy === 'price_desc') 
-        {
-          $products->orderBy('price', 'desc');
-
-        } 
-        elseif ($orderBy === 'title') 
-        {
-          $products->orderBy('title', 'asc');
-
-        } 
-        elseif ($orderBy === 'created_at') 
-        {
-          $products->orderBy('created_at', 'desc');
-        }
-        else 
-        {
-        return response()->json([]); 
-        }
+        $products->orderBy($order, $sort);
 
         $product = $products->get()->toArray();
 
