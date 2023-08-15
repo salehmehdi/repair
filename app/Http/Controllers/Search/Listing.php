@@ -44,5 +44,6 @@ class Listing extends Controller
         
         
         return response()->json( $products);
+        
     }
 }
