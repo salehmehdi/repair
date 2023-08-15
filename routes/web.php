@@ -18,7 +18,7 @@ use App\Http\Controllers\Hompage\Show as HompageShow;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('header');
 });
 
 Route::get('/search/listing', [Listing::class, '__invoke']);
