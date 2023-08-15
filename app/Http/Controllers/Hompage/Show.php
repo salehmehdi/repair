@@ -15,6 +15,6 @@ class Show extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('Hompage.show');
+        return view('homepage.show');
     }
 }
