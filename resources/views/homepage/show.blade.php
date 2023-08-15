@@ -31,7 +31,7 @@
 <body>
     <div>
         @yield("header")
-        
+        <h1>tale ve saleh</h1>
     </div>
     
 

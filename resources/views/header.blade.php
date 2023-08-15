@@ -1,4 +1,4 @@
-@extends("Hompage.show")
+@extends("homepage.show")
 
 @section("header")
     <div class="header">
