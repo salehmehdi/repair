@@ -34,6 +34,8 @@ class Listing extends Controller
         $product = $products->get()->toArray();
 
         return response()->json($product);
+
+        
     
 
 
