@@ -4,9 +4,9 @@ $(document).ready(function() {
         var searchTerm = $(this).val(); 
         
         $.ajax({
-            url: "{{ route('/search/listing') }}",  
+            url: '/search/listing',  
             method: "GET",
-            data: { query: searchTerm  },
+            data: { searchTerm: searchTerm  },
             dataType: "json",
             success: function(response) {
                 var resultsHtml = ""; 
