@@ -35,8 +35,12 @@ body {
 .d-flex {
     display: flex!important;
 }
-li a{
-list-style: none !important;
+
+li {
+    list-style: none;
+}
+ a{
+
 text-decoration: none !important;
 }
 
@@ -280,5 +284,52 @@ text-decoration: none !important;
 
 .navigation-listItem>a>span:hover {
     color: #fff;
+}
+
+
+.nav-sell-device {
+    background-image: radial-gradient(circle at 100% 100%,transparent 3px,#30b700 3px,#30b700 5px,transparent 5px),linear-gradient(to right,#30b700,#30b700),radial-gradient(circle at 0 100%,transparent 3px,#30b700 3px,#30b700 5px,transparent 5px),linear-gradient(to bottom,#30b700,#000),radial-gradient(circle at 0 0,transparent 3px,#0a0a0a 3px,#0a0a0a 5px,transparent 5px),linear-gradient(to left,#0a0a0a,#0d0d0d),radial-gradient(circle at 100% 0,transparent 3px,#0a0a0a 3px,#0a0a0a 5px,transparent 5px),linear-gradient(to top,#0d0d0d,#30b700);
+    background-size: 5px 5px,calc(100% - 10px) 2px,5px 5px,2px calc(100% - 10px);
+    background-position: top left,top center,top right,center right,bottom right,bottom center,bottom left,center left;
+    background-repeat: no-repeat;
+    height: 92px;
+}
+
+
+.nav-sell-device a {
+    color: #30b700;
+    position: relative;
+    margin-top: 10px;
+}
+
+.nav-sell-device a:hover {
+    color: #fff;
+}
+
+.nav-sell-device a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right,#000,#e5f6f2,#000);
+    transition: .3s;
+}
+
+
+
+.m_devices_other {
+    height: 32px!important;
+    background-size: 32px;
+    background-position: center center;
+    margin-left: 0;
+}
+
+.ins-phone-sell-c387 {
+    background-image: url(https://image.useinsider.com/easycep/defaultImageLibrary/QAMME%C3%9C-1659629325.png);
+    background-repeat: no-repeat;
+    
+    height: 50px !important;
 }
  /*---End Header----*/

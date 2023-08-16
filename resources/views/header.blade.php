@@ -1,4 +1,4 @@
-@extends("homepage.show")
+@extends("")
 
 @section("header")
     <div class="header">
@@ -67,7 +67,10 @@
                 </div>
                 <div class="header-search" >
                     <div class="header-search-form text-align-center position-relative" >
-                        <input  id="searchInput" class="text-control" type="text" placeholder="Ürün, marka veya kategori ara" autocomplete="off"  >
+                        <input   class="text-control js-searchInput" type="text" placeholder="Ürün, marka veya kategori ara" autocomplete="off"  >
+                        <ul class="js-searchResults" >
+                            
+                        </ul>
                         <button class="btn btn-color-ferry header-search-submit" >
                             <i class="bi bi-search"></i>
                         </button>
@@ -136,6 +139,12 @@
                             </a>
                         </li>
                     </ul>
+                    <div class=" nav-sell-device">
+                        <a href="https://easycep.com/telefon-sat/" target="_blank" class="d-flex flex-column justify-content-center text-center" title="Cihaz Sat">
+                            <i class="material-icons m_devices_other ins-phone-sell-c387"></i>
+                            <span class="text-uppercase sp-custom-387-1682353500">Hemen sat</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>

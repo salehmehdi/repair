@@ -19,7 +19,7 @@ use App\Http\Controllers\Cart\Store;
 */
 
 Route::get('/', function () {
-    return view('header');
+    return view('layouts.app');
 });
 
 Route::get('/search/listing', [Listing::class, '__invoke']);
