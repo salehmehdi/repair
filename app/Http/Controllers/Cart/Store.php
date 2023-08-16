@@ -25,12 +25,11 @@ class Store extends Controller
         $cart[] = [
             'product_id' => $product->id,
             'price' => $product->price,
+            'name'=>$product->title,
             //'user_id' => auth()->user()->id,
-           
         ];
 
-        
-        $request->session()->put('cart', $cart);
+         $request->session()->put('cart', $cart);
 
     
         Cart::create([
