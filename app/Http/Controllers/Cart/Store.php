@@ -27,11 +27,9 @@ class Store extends Controller
             'price' => $product->price,
             'name'=>$product->title,
             //'user_id' => auth()->user()->id,
-           
         ];
 
-        
-        $request->session()->put('cart', $cart);
+         $request->session()->put('cart', $cart);
 
     
         Cart::create([
