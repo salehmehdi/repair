@@ -1,16 +1,26 @@
+
 $(document).ready(function() {
-    $("#searchInput").keyup(function() {
+    $(".js-searchInput").keyup(function() {
         var searchTerm = $(this).val(); 
         
         $.ajax({
-           /* url: "{{ route('search') }}", */
-            url: "/search/listing",
+            url: "{{ route('/search/listing') }}",  
             method: "GET",
-            data: { searchTerm: searchTerm },
+            data: { query: searchTerm  },
             dataType: "json",
             success: function(response) {
-                $("#searchResults").html(response); 
+                var resultsHtml = ""; 
+                
+                $.each(response, function(index, product) {
+                    resultsHtml += "<li>" + product.title + "</li>";
+                });
+                
+                $(".js-searchResults").html(resultsHtml); 
             }
         });
     });
 });
+
+
+
+

@@ -1,41 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>easycep.com</title>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Urbanist:wght@100;200;500&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+@extends("layouts.app")
 
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
-    <script src="{{ asset('app.js') }}"></script>
-
-
-</head>
-<body>
-    <div>
-        @yield("header")
-       
+@section("show")
+    <div class="header">
+        <div class="simple__banner">
+            <div class="simple__banner-text">
+                <a class="simple__banner-link"  href="https://easycep.com/kategori/cep-telefonu-1">
+                    TÜM KREDİ KARTLARINDA GEÇERLİ PEŞİN FİYATINA 12 TAKSİT! 
+                </a>
+            </div>
+        </div>
+        <div class="container" >
+            <div class="header-top d-flex justify-content-between ">
+                <div class="header-top--nav" >
+                    <ul class=" align-items-center ">
+                        <li class ="">
+                            <a href="">
+                                <i class="bi bi-box-seam me-2"></i>
+                            Sipariş Takibi   
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="bi bi-shop-window me-2"></i>
+                                Mağazalar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-top--user position-relative " >
+                    <div class="header-top-myAcconut  d-flex" >
+                        <div class="dropdown">
+                            <a href="#" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" title="Giriş Yap">
+                                <i class="bi bi-person-circle me-2"></i>
+                                <span class=" d-lg-flex">
+                                    Giriş Yap
+                                </span>
+                                <i class="bi bi-chevron-down ms-2 d-none d-lg-flex"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end slideDownIn p-4">
+                                <div class="header__top--userLogin d-grid gap-2">
+                                    <a href="https://easycep.com/login" class="btn btn-color-ferry" title="Giriş Yap">Giriş Yap</a>
+                                    <a href="https://easycep.com/register" class="btn btn-color-ferry" title="Üye Ol">Üye Ol</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" aria-label="Sepet">
+                                <i class="bi bi-bag-fill me-2"></i>
+                                <span class=" d-lg-inline-flex">&nbsp;&nbsp;Sepetim</span>
+                            </button>
+                            <div class="basketContent dropdown-menu dropdown-menu-end p-3 slideDownIn" style="">
+                                <div class="basketCountText pt-3 pb-3 text-center">
+                                    <lottie-player class="lottie-icon lottie-basket" src="https://easycep.com/assets/dist/lottie/empty-basket.json?v=1.2.4"></lottie-player>
+                                    <p class="isEmpty mt-3">Sepetiniz Boş</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <div class="header-content" >
+                <div class="header-logo text-align-center mb-3">
+                    <a href="https://easycep.com">
+                        <img src="https://easycep.com/assets/dist/web/images/logo/logo.svg?v=1.2.37"width="250" height="61">
+                    </a>
+                </div>
+                <div class="header-search" >
+                    <div class="header-search-form text-align-center position-relative" >
+                        <input   class="text-control js-searchInput" type="text" placeholder="Ürün, marka veya kategori ara" autocomplete="off"  >
+                        <ul class="js-searchResults" >
+                            
+                        </ul>
+                        <button class="btn btn-color-ferry header-search-submit" >
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="header-navigation ">
+            <div class="container">
+                <div class="navigation-wrapper" >
+                    <ul class="navigation-list d-flex  text-align-start">
+                        <li class="navigation-listItem" >
+                            <a href="https://easycep.com/kategori/cep-telefonu-1" class="d-flex flex-column justify-content-center text-center" title="Cep Telefonu">
+                                <i class="bi bi-phone"></i>
+                                <span class="text-uppercase">Cep Telefonu 
+                                    <i class="bi bi-chevron-down"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="navigation-listItem" >
+                            <a href="https://easycep.com/kategori/cep-telefonu-1" class="d-flex flex-column justify-content-center text-center" title="Cep Telefonu">
+                                <i class="bi bi-smartwatch"></i>
+                                <span class="text-uppercase">Akıllı Saat 
+                                    <i class="bi bi-chevron-down"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="navigation-listItem" >
+                            <a href="https://easycep.com/kategori/cep-telefonu-1" class="d-flex flex-column justify-content-center text-center" title="Cep Telefonu">
+                                <i class="bi bi-tablet-landscape"></i>  
+                                <span class="text-uppercase">Tablet 
+                                    <i class="bi bi-chevron-down"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="navigation-listItem" >
+                            <a href="https://easycep.com/kategori/cep-telefonu-1" class="d-flex flex-column justify-content-center text-center" title="Cep Telefonu">
+                                <i class="bi bi-laptop"></i>
+                                <span class="text-uppercase">Bilgisayar 
+                                    <i class="bi bi-chevron-down"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="navigation-listItem" >
+                            <a href="https://easycep.com/kategori/cep-telefonu-1" class="d-flex flex-column justify-content-center text-center" title="Cep Telefonu">
+                                <i class="bi bi-headphones"></i>
+                                <span class="text-uppercase">Aksesuar
+                                    <i class="bi bi-chevron-down"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="navigation-listItem" >
+                            <a href="https://easycep.com/kategori/cep-telefonu-1 ms-1" class="d-flex flex-column justify-content-center text-center" title="Cep Telefonu">
+                                <i class="bi bi-lamp"></i>
+                                <span class="text-uppercase">Ev Aletleri 
+                                    <i class="bi bi-chevron-down"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="navigation-listItem" >
+                            <a href="https://easycep.com/kategori/cep-telefonu-1 ms-1" class="d-flex flex-column justify-content-center text-center" title="Cep Telefonu">
+                                <i class="bi bi-lightning-charge"></i>
+                                <span class="text-uppercase">E-Scotter 
+                                    <i class="bi bi-chevron-down"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class=" nav-sell-device">
+                        <a href="https://easycep.com/telefon-sat/" target="_blank" class="d-flex flex-column justify-content-center text-center" title="Cihaz Sat">
+                            <i class="material-icons m_devices_other ins-phone-sell-c387"></i>
+                            <span class="text-uppercase sp-custom-387-1682353500">Hemen sat</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script
-</body>
-</html>
+@endsection
