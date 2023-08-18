@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use App\Models\Cart;
+use App\Models\CartItem;
 use App\Models\Product;
+
+use Log;
 
 class Store extends Controller
 {
@@ -24,7 +26,9 @@ class Store extends Controller
         $cart = $request->session()->get('cart', []);
        
         $orderCode = session('order_code');
+        Log::info($orderCode);
         if (!$orderCode) {
+            Log::debug($orderCode);
             $orderCode = rand(1, 1000);
             session(["order_code" => $orderCode]);
         }
@@ -40,12 +44,20 @@ class Store extends Controller
         
         $request->session()->put('cart', $cart);
         
-        Cart::create([
+        CartItem::create([
             'product_id' => $product->id,
             'price' => $product->price,
             'order_code' => $orderCode,
         ]);
 
-        dd($cart); 
+        $Data = [
+            'success' => true,
+            'message' => 'Ürün sepete eklendi.',
+            'cart' => $cart,
+        ];
+    
+        return response()->json($Data);
+
+    
     }
 }

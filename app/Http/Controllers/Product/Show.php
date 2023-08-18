@@ -16,14 +16,26 @@ class Show extends Controller
      */
     public function __invoke($id)
     {
-        $products = Product::where('id',$id)->get();
-        foreach($products as $product)
+            
+        $product = Product::where('id',$id)->first();
+        try 
         {
-            if($product)
+           if (!$product)
             {
-                return $product->title;
+                throw new \Exception('Product not found');
             }
+    
+        return view('homepage.productshow', compact('product'));
         }
+        
+        catch (\Exception $e) 
+        {
+            \Log::debug($e->getMessage());
+    
+             return redirect('/')->with('error', 'Something went wrong.');
+        }
+            
+        
         
     }
 }
