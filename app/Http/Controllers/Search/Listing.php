@@ -31,7 +31,7 @@ class Listing extends Controller
         
         $products = Product::where('title','like','%'.$searchTerm.'%')->limit(10)->get()->toArray();
        
-        //$limitedProducts = array_slice($products, 0, 3); 
+        
        
     
         

@@ -5,6 +5,7 @@ use App\Http\Controllers\Search\Listing;
 use App\Http\Controllers\Product\Show;
 use App\Http\Controllers\Product\Listing as ProductListing;
 use App\Http\Controllers\Hompage\Show as HompageShow;
+use App\Http\Controllers\Hompage\ProductShow as ProductShow;
 use App\Http\Controllers\Cart\Store;
 
 /*
@@ -27,3 +28,4 @@ Route::get('/product/show/{id}', [Show::class, '__invoke']);
 Route::get('/product/listing', [ProductListing::class, '__invoke']);
 Route::get('/hompage/show', [HompageShow::class, '__invoke']);
 Route::get('/cart/store/{productId}', [Store::class, '__invoke']);
+Route::get('/hompage/product_show', [ProductShow::class, '__invoke']);

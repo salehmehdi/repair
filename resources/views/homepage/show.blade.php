@@ -68,7 +68,7 @@
                 <div class="header-search" >
                     <div class="header-search-form text-align-center position-relative" >
                         <input   class="text-control js-searchInput" type="text" placeholder="Ürün, marka veya kategori ara" autocomplete="off"  >
-                        <ul class="js-searchResults" >
+                        <ul class="js-searchResults " >
                             
                         </ul>
                         <button class="btn btn-color-ferry header-search-submit" >
