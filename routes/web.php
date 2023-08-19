@@ -25,6 +25,6 @@ Route::get('/', function () {
 Route::get('/search/listing', [Listing::class, '__invoke']);
 Route::get('/product/show/{id}', [Show::class, '__invoke']);
 Route::get('/product/listing', [ProductListing::class, '__invoke']);
-Route::get('/hompage/show', [HompageShow::class, '__invoke']);
+Route::get('/homepage/show', [HompageShow::class, '__invoke']);
 Route::get('/cart/store/{productId}', [Store::class, '__invoke']);
 

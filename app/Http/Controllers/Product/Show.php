@@ -25,14 +25,14 @@ class Show extends Controller
                 throw new \Exception('Product not found');
             }
     
-        return view('homepage.productshow', compact('product'));
+        return view('product.show', compact('product'));
         }
         
         catch (\Exception $e) 
         {
             \Log::debug($e->getMessage());
     
-             return redirect('/')->with('error', 'Something went wrong.');
+             return redirect('/homepage/show')->with('error', 'Something went wrong.');
         }
             
         
