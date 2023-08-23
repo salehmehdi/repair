@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Search\Listing;
 use App\Http\Controllers\Product\Show;
 use App\Http\Controllers\Product\Listing as ProductListing;
-use App\Http\Controllers\Hompage\Show as HompageShow;
+use App\Http\Controllers\Hompage\Show as HomepageShow;
 use App\Http\Controllers\Cart\Store;
+use App\Http\Controllers\Cart\Item_Quantity\Show as Item_QuantityShow;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,4 @@ Route::get('/search/listing', [Listing::class, '__invoke']);
 Route::get('/product/show/{id}', [Show::class, '__invoke']);
 Route::get('/product/listing', [ProductListing::class, '__invoke']);
 Route::get('/hompage/show', [HompageShow::class, '__invoke']);
-
+Route::get('/cart/store/{productId}', [Store::class, '__invoke']);
