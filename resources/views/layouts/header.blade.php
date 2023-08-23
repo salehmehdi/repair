@@ -1,6 +1,5 @@
-@extends("")
 
-@section("header")
+
     <div class="header">
         <div class="simple__banner">
             <div class="simple__banner-text">
@@ -68,13 +67,15 @@
                 <div class="header-search" >
                     <div class="header-search-form text-align-center position-relative" >
                         <input   class="text-control js-searchInput" type="text" placeholder="Ürün, marka veya kategori ara" autocomplete="off"  >
-                        <ul class="js-searchResults" >
-                            
-                        </ul>
+                        
                         <button class="btn btn-color-ferry header-search-submit" >
                             <i class="bi bi-search"></i>
                         </button>
+                        
                     </div>
+                    <ul class="js-searchResults" >
+                            
+                    </ul>
                 </div>
             </div>
         </div>
@@ -149,4 +150,4 @@
             </div>
         </nav>
     </div>
-@endsection
+

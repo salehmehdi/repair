@@ -14,16 +14,6 @@ class Show extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke($id)
-    {
-        $products = Product::where('id',$id)->get();
-        foreach($products as $product)
-        {
-            if($product)
-            {
-                return $product->title;
-            }
-        }
-        
-    }
+    
+     
 }
