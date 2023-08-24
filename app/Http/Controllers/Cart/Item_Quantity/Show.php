@@ -19,8 +19,8 @@ class Show extends Controller
     {
        
         $orderCode = session('order_code');
-        $cartItemCount = CartItem::where('order_code', $orderCode)->sum('quantity');
-        return $cartItemCount;
+        return CartItem::where('order_code', $orderCode)->sum('quantity') ?? 0;
+        
         
     }
 }
