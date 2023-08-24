@@ -50,9 +50,9 @@ $(document).ready(function () {
         var productId = $(this).data("product-id");
         
         $.ajax({
-            url: '/cart/store'+ productId, 
-            method: 'POST',
-            data: { product_id: productId },
+            url: "/cart/store/{productId}", 
+            method: 'GET',
+            data: { product_id:productId },
             dataType: 'json',
             success: function(response) {
                 console.log(response.message); 

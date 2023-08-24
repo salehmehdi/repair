@@ -15,10 +15,6 @@ class Show extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    
-     
-=======
     public function __invoke($id)
     {
             
@@ -43,5 +39,4 @@ class Show extends Controller
         
         
     }
->>>>>>> development
 }

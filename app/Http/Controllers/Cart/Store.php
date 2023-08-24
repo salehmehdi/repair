@@ -25,6 +25,7 @@ class Store extends Controller
 
         $product = Product::findOrFail($productId);
         $quantity = $request->input('quantity',1);
+       
         
         $orderCode = $request->session()->get('order_code');
         if(!$orderCode)
