@@ -7,6 +7,8 @@ use App\Http\Controllers\Product\Listing as ProductListing;
 use App\Http\Controllers\Hompage\Show as HomepageShow;
 use App\Http\Controllers\Cart\Store;
 use App\Http\Controllers\Cart\Item_Quantity\Show as Item_QuantityShow;
+use App\Http\Controllers\Cart\Item_Quantity\Update as Item_QuantityUpdate;
+use App\Http\Controllers\Cart\Item_Quantity\Remove as Item_QuantityRemove;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +31,6 @@ Route::get('/product/listing', [ProductListing::class, '__invoke']);
 Route::get('/homepage/show', [HomepageShow::class, '__invoke']);
 Route::get('/cart/store/{productId}', [Store::class, '__invoke']);
 Route::get('/cart/item_quantityshow/{orderCode}', [Item_QuantityShow::class, '__invoke']);
+Route::get('/cart/item_quantityupdate/{productId}', [Item_QuantityUpdate::class, '__invoke']);
+Route::get('/cart/item_quantityremove/{productId}', [Item_QuantityRemove::class, '__invoke']);
 
