@@ -17,10 +17,12 @@ class Show extends Controller
      */
     public function __invoke($orderCode)
     {
-       
-        $orderCode = session('order_code');
-        return CartItem::where('order_code', $orderCode)->sum('quantity') ?? 0;
-        
+
+        $totalQuantity = CartItem::where('order_code', $orderCode)->sum('quantity') ?? 0;
+        return response()->json([
+            'data' => $totalQuantity
+        ]);
+         
         
     }
 }

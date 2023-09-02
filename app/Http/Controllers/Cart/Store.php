@@ -38,7 +38,15 @@ class Store extends Controller
              $orderCode = rand(1,1000);
              $request->session()->put('order_code',$orderCode);
            }
+           $cartItem = CartItem::where('product_id', $productId)->where('order_code', $orderCode)->first();
 
+           if ($cartItem) 
+           {
+               $cartItem->quantity += $quantity;
+               $cartItem->total_price = $cartItem->unit_price * $cartItem->quantity;
+               $cartItem->save();
+               throw new \Exception('urun sepette mevcut');
+           }
             $cart_item = new CartItem([
                 'product_id'=> $productId,
                 'quantity'=>$quantity,
