@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Cart\Item_Quantity;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Exceptions\Handler;
 use App\Models\CartItem;
 use App\Models\Product;
+use log;
 
 class Update extends Controller
 {
@@ -19,7 +22,7 @@ class Update extends Controller
     {
        try
        {
-         $newQuantity = $request->input('quantity', 6);
+         $newQuantity = $request->input('quantity', 1);
          $orderCode = $request->session()->get('order_code');
          $cartItem = CartItem::where('product_id', $productId)->where('order_code', $orderCode)->first();
          if(!$cartItem)
