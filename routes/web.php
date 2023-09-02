@@ -21,8 +21,8 @@ use App\Http\Controllers\Cart\Item_Quantity\Remove as Item_QuantityRemove;
 |
 */
 
-Route::get('/content', function () {
-    return view('homepage.content');
+Route::get('/cart', function () {
+    return view('cart.show');
 });
 
 

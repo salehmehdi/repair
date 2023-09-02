@@ -23,16 +23,21 @@ class Store extends Controller
     public function __invoke(Request $request, $productId,)
     {
     
-
-        $product = Product::findOrFail($productId);
-        $quantity = $request->input('quantity',1);
-        
-        $orderCode = $request->session()->get('order_code');
-        if(!$orderCode)
+        try
         {
-            $orderCode = rand(1,1000);
-            $request->session()->put('order_code',$orderCode);
-        }
+            $product = Product::findOrFail($productId);
+            $quantity = $request->input('quantity');
+            if(!$product)
+           {
+             throw new \Exception('Product not found');
+            }
+           
+            $orderCode = $request->session()->get('order_code');
+            if(!$orderCode)
+           {
+             $orderCode = rand(1,1000);
+             $request->session()->put('order_code',$orderCode);
+           }
 
             $cart_item = new CartItem([
                 'product_id'=> $productId,

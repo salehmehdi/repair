@@ -36,8 +36,9 @@ $(document).ready(function () {
         }, 300);
     });
 
+    
 
-
+    //----İmage Slider----//
     $(".small-img").click(function() {
         var smallimg = $(this).attr("src");
         var fullimg = $(".imagebox")[0];
@@ -46,16 +47,25 @@ $(document).ready(function () {
 
     });
 
+
+    //---Adding the Product to the Basket--//
+
     $(".add-to-cart").click(function() {
         var productId = $(this).data("product-id");
-        
+        var quantity =$("#quantity").val();
         $.ajax({
-            url: "/cart/store/{productId}", 
+            url: "/cart/store/"+productId, 
             method: 'GET',
-            data: { product_id:productId },
+            data: { product_id:productId ,
+                    quantity:quantity
+            },
             dataType: 'json',
             success: function(response) {
-                console.log(response.message); 
+               if(response.success){
+                alert(response.message)
+               }else{
+                alert("Ürün Sepete Eklenmedi")
+               }
             },
             error: function(xhr, status, error) {
                 console.error("AJAX Hatası:", status, error);
@@ -63,8 +73,7 @@ $(document).ready(function () {
         });
     });
     
-    
-    
+   
     
 });
 
